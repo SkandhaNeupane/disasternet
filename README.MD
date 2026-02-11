@@ -1,4 +1,4 @@
-# 🚨 DisasterNet – Offline-First Emergency Communication System (Python)
+#  DisasterNet – Offline-First Emergency Communication System (Python)
 
 > **An offline-first, peer-to-peer emergency messaging platform designed for disaster scenarios where internet connectivity is unreliable or unavailable.**
 
@@ -14,7 +14,7 @@ A Python backend exposes the P2P network through a **REST API and WebSockets**, 
 
 ---
 
-## 🗺️ Full System Architecture Diagram
+##  Full System Architecture Diagram
 
 ```
 ┌─────────────────────────────────────────────────────────────┐
@@ -70,29 +70,29 @@ A Python backend exposes the P2P network through a **REST API and WebSockets**, 
 
 ---
 
-## 🔑 Key Design Principles
+##  Key Design Principles
 
-### 1️⃣ Offline-First Architecture
+### 1️ Offline-First Architecture
 
 * Internet connectivity is **optional**
 * Each node works independently
 * Messages are written to local storage first
 * Automatic sync when peers reconnect
 
-### 2️⃣ Peer-to-Peer Networking
+### 2️ Peer-to-Peer Networking
 
 * No central server required for communication
 * LAN-based peer discovery
 * Direct peer message exchange
 * Gossip-style message propagation
 
-### 3️⃣ API-Driven Design
+### 3️ API-Driven Design
 
 * P2P complexity hidden behind REST APIs
 * Clean separation between networking and UI
 * Easy to extend or replace components
 
-### 4️⃣ Real-Time Communication
+### 4️ Real-Time Communication
 
 * WebSockets used for:
 
@@ -102,7 +102,7 @@ A Python backend exposes the P2P network through a **REST API and WebSockets**, 
 
 ---
 
-## 🔐 Identity & Security Model
+##  Identity & Security Model
 
 * Each node generates a **public/private key pair**
 * User identity is derived from the public key
@@ -116,7 +116,7 @@ This model works **fully offline** and can optionally integrate with JWT/OAuth w
 
 ---
 
-## 🗄️ Data Persistence Strategy
+##  Data Persistence Strategy
 
 All data is stored locally to ensure availability during outages.
 
@@ -136,7 +136,7 @@ All data is stored locally to ensure availability during outages.
 
 ---
 
-## 📡 API Capabilities (High-Level)
+##  API Capabilities (High-Level)
 
 * Peer discovery & status
 * Room creation & membership
@@ -146,7 +146,7 @@ All data is stored locally to ensure availability during outages.
 
 ---
 
-## 🧪 Failure & Recovery Scenarios
+##  Failure & Recovery Scenarios
 
 ✔ Network partitioning
 ✔ Sudden peer disconnects
@@ -157,26 +157,26 @@ System automatically recovers and resynchronizes when peers rejoin.
 
 ---
 
-## 🚀 Why This Project Stands Out
+##  Why This Project Stands Out
 
 This project demonstrates:
 
-* ✅ Distributed systems thinking
-* ✅ Peer-to-peer networking
-* ✅ Offline-first design
-* ✅ Real-time backend APIs
-* ✅ Security-conscious identity handling
-* ✅ Production-ready architecture
+* Distributed systems thinking
+*  Peer-to-peer networking
+*  Offline-first design
+*  Real-time backend APIs
+*  Security-conscious identity handling
+*  Production-ready architecture
 
 It goes far beyond basic CRUD applications and reflects **real-world system design skills**.
 
 ---
 
-## 📑 API Contract (High-Level)
+##  API Contract (High-Level)
 
 The backend exposes a clean REST + WebSocket interface that abstracts the peer-to-peer network.
 
-### 🔐 Authentication & Identity
+###  Authentication & Identity
 
 | Method | Endpoint     | Description                               |
 | ------ | ------------ | ----------------------------------------- |
@@ -187,7 +187,7 @@ The backend exposes a clean REST + WebSocket interface that abstracts the peer-t
 
 ---
 
-### 👥 Peer Management
+###  Peer Management
 
 | Method | Endpoint           | Description                    |
 | ------ | ------------------ | ------------------------------ |
@@ -198,7 +198,7 @@ Peers are discovered automatically via LAN discovery and updated in real time.
 
 ---
 
-### 🏠 Rooms
+###  Rooms
 
 | Method | Endpoint                 | Description          |
 | ------ | ------------------------ | -------------------- |
@@ -211,7 +211,7 @@ Rooms are logical groupings used for message routing across the P2P network.
 
 ---
 
-### 💬 Messages
+###  Messages
 
 | Method | Endpoint                    | Description           |
 | ------ | --------------------------- | --------------------- |
@@ -222,7 +222,7 @@ Messages are written locally first and then propagated to peers asynchronously.
 
 ---
 
-### 📡 Network & Health
+###  Network & Health
 
 | Method | Endpoint      | Description                    |
 | ------ | ------------- | ------------------------------ |
@@ -231,7 +231,7 @@ Messages are written locally first and then propagated to peers asynchronously.
 
 ---
 
-### 🔁 WebSocket Channels
+###  WebSocket Channels
 
 | Channel        | Purpose                 |
 | -------------- | ----------------------- |
@@ -241,13 +241,13 @@ Messages are written locally first and then propagated to peers asynchronously.
 
 ---
 
-## ⚙️ How It Works Internally (Message Lifecycle)
+##  How It Works Internally (Message Lifecycle)
 
 This section explains what happens end-to-end when a user sends a message.
 
 ---
 
-### ✉️ Message Creation
+###  Message Creation
 
 1. User submits a message from the web dashboard
 2. Frontend sends a request to the backend API
@@ -261,7 +261,7 @@ This section explains what happens end-to-end when a user sends a message.
 
 ---
 
-### 💾 Local Persistence (Offline-First Rule)
+### Local Persistence (Offline-First Rule)
 
 5. Message is immediately stored in the local database
 6. UI is updated optimistically via WebSocket
@@ -270,7 +270,7 @@ This section explains what happens end-to-end when a user sends a message.
 
 ---
 
-### 🌐 Peer-to-Peer Propagation
+###  Peer-to-Peer Propagation
 
 7. P2P engine broadcasts the message to connected peers
 8. Peers verify message signature
@@ -280,7 +280,7 @@ Propagation uses a gossip-style approach to avoid reliance on a single node.
 
 ---
 
-### 🔄 Synchronization & Recovery
+###  Synchronization & Recovery
 
 10. If a peer was offline:
 
@@ -290,7 +290,7 @@ Propagation uses a gossip-style approach to avoid reliance on a single node.
 
 ---
 
-### 📢 Real-Time Updates
+###  Real-Time Updates
 
 12. Incoming messages trigger internal events
 13. Events are pushed to all connected dashboards via WebSockets
@@ -298,7 +298,7 @@ Propagation uses a gossip-style approach to avoid reliance on a single node.
 
 ---
 
-### 🧠 Failure Handling
+###  Failure Handling
 
 * Network partition → messages queue locally
 * Peer disconnect → no message loss
@@ -309,7 +309,7 @@ This guarantees **eventual consistency** across peers.
 
 ---
 
-## 🧭 Potential Extensions
+##  Potential Extensions
 
 * Internet relay nodes for WAN communication
 * Mobile client (Android/iOS)
@@ -319,7 +319,7 @@ This guarantees **eventual consistency** across peers.
 
 ---
 
-## 👨‍💻 Author
+##  Author
 
 **Skanda**
 Bachelor of Engineering (BE)
